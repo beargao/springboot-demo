@@ -31,4 +31,12 @@ public class Mapper2Test {
         }
     }
 
+    @Test
+    public void getAllUsersTest() {
+        List<SysUser> sysUsers = sysUserMapper.getAllUsers();
+        for (SysUser sysUser : sysUsers) {
+            System.out.println(sysUser);
+        }
+    }
+
 }
