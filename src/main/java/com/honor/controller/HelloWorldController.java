@@ -1,6 +1,6 @@
 package com.honor.controller;
 
-import com.honor.mapper.SysUserMapper;
+import com.honor.service.sys.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class HelloWorldController {
+    @Autowired
+    private ISysUserService sysUserService;
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -19,4 +21,9 @@ public class HelloWorldController {
         return "Hello World!";
     }
 
+    @RequestMapping("/select")
+    @ResponseBody
+    public String select() {
+        return sysUserService.selectAll().toString();
+    }
 }
