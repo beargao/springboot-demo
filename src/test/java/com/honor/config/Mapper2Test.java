@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,6 +37,21 @@ public class Mapper2Test {
         List<SysUser> sysUsers = sysUserMapper.getAllUsers();
         for (SysUser sysUser : sysUsers) {
             System.out.println(sysUser);
+        }
+    }
+
+    @Test
+    public void insertTest() {
+        int i = 0;
+        while (i < 10) {
+            SysUser sysUser = new SysUser();
+            sysUser.setUserName("测试");
+            sysUser.setCreateTime(new Date());
+            sysUser.setEmail("email");
+            sysUser.setPassword("password");
+            sysUser.setHeadImg("base63");
+            sysUserMapper.insert(sysUser);
+            i++;
         }
     }
 
