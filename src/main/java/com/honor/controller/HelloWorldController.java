@@ -21,10 +21,11 @@ public class HelloWorldController {
     @RequestMapping("/hello")
     @ResponseBody
     public String sayHello() {
-        for (int i = 0; i < 10; i++) {
-            asyncDemo.test(i);
-        }
-        System.out.println("主线程id:" + Thread.currentThread().getId());
+        int i = 1 / 0;
+//        for (int i = 0; i < 10; i++) {
+//            asyncDemo.test(i);
+//        }
+//        System.out.println("主线程id:" + Thread.currentThread().getId());
         return "Hello World!";
     }
 
