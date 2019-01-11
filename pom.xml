@@ -7,6 +7,7 @@
     <groupId>com.honor</groupId>
     <artifactId>springboot-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <!--springboot parent-->
     <parent>
@@ -43,6 +44,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--让内嵌的tomcat失效，打包时放开。-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!--测试工具-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -109,4 +118,14 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <!--包名，默认是${artifactId}-${version}-->
+        <finalName>springboot-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
