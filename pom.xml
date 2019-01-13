@@ -6,7 +6,11 @@
 
     <groupId>com.honor</groupId>
     <artifactId>springboot-demo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>mbg</module>
+    </modules>
 
     <!--springboot parent-->
     <parent>
